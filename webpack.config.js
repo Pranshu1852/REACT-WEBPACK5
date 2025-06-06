@@ -11,4 +11,15 @@ module.exports={
         clean: true,
         assetModuleFilename: '[name][ext]'
     },
+    devtool: 'source-map',
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        port: 5000,
+        open: true,
+        hot: true,
+        compress: true,
+        historyApiFallback: true
+    },
 }
