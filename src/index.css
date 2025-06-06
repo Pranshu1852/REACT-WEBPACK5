@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    min-width: 320px;
+    line-height: 0;
+}
+
+.maincontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px;
+    max-width: 800px;
+    background-color: #121212;
+    border-radius: 10px;
+}
+
+.webpackImage{
+    width: 300px;
+    height: 300px;
+}
+
+.counter{
+    font-size: 35px;
+}
+
+.btn{
+    background-color: #363636;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transition-duration: 120ms;
+}
