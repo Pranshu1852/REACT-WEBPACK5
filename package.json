@@ -1,0 +1,25 @@
+{
+  "name": "react-webpack5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranshu1852/REACT-WEBPACK5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Pranshu1852/REACT-WEBPACK5/issues"
+  },
+  "homepage": "https://github.com/Pranshu1852/REACT-WEBPACK5#readme",
+  "devDependencies": {
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}
