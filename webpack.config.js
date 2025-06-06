@@ -1,4 +1,5 @@
-const path=require('path')
+const path=require('path');
+const HtmlWebpackPlugin=require('html-webpack-plugin');
 
 module.exports={
     mode: "development",
@@ -22,4 +23,11 @@ module.exports={
         compress: true,
         historyApiFallback: true
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Webpack App",
+            filename: "index.html",
+            template: "index.html"
+        })
+    ]
 }
