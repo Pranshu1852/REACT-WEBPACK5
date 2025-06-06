@@ -6,6 +6,9 @@ module.exports={
     entry: {
         bundle: path.resolve(__dirname, 'src/main.tsx') 
     },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name][contenthash].js',
@@ -42,6 +45,11 @@ module.exports={
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: "ts-loader",
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
