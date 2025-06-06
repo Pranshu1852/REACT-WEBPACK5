@@ -23,6 +23,18 @@ module.exports={
         compress: true,
         historyApiFallback: true
     },
+    module: {
+        rules: [
+            {
+                test: /\.(scss|sass|css)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Webpack App",
