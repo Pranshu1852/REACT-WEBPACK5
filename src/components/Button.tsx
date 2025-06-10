@@ -1,9 +1,5 @@
 import { HTMLProps, MouseEventHandler } from "react";
 
-// interface ButtonProps extends {
-//     onClickHandler: MouseEventHandler<HTMLButtonElement>
-// }
-
 type ButtonProps={
     onClickHandler: MouseEventHandler<HTMLButtonElement>
 } & HTMLProps<HTMLButtonElement>
