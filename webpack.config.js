@@ -1,0 +1,69 @@
+const path=require('path');
+const HtmlWebpackPlugin=require('html-webpack-plugin');
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
+module.exports={
+    mode: isDevelopment ? 'development' : 'production',
+    entry: {
+        bundle: path.resolve(__dirname, 'src/main.tsx') 
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name][contenthash].js',
+        clean: true,
+        assetModuleFilename: '[name][ext]'
+    },
+    devtool: isDevelopment ? 'eval-source-map' : 'source-map',
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        port: 5000,
+        open: true,
+        hot: true,
+        compress: true,
+        historyApiFallback: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: "ts-loader",
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+                type: 'asset/resource'
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Webpack App",
+            filename: "index.html",
+            template: "index.html"
+        })
+    ]
+}
